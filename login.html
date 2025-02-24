@@ -31,19 +31,20 @@
 
     <script>
         const users = {
-            "usuario1": "5e884898da28047151d0e56f8dc6292773603d0d6aabbdd68f04129c0e6b2f22", 
-            "admin": "84989c350b7442128a0b2a8eb7115212ee2135199662ac624820801012069773" 
+            "estudiante": "2e63a1090735f47213fea3b974418e3e42437325f313b3d3d2f6238cc22298f9", 
+            "licenciado": "4b3cbece0f092e8bba4f5c15921335267396b5bb99dc48f42c5639baa729c9d9" 
         };
-
+    
         document.getElementById("loginForm").addEventListener("submit", function(event) {
             event.preventDefault();
-
+    
             const username = document.getElementById("username").value;
             const password = document.getElementById("password").value;
             const hashedPassword = CryptoJS.SHA256(password).toString();
-
+    
             if (users[username] && users[username] === hashedPassword) {
                 sessionStorage.setItem("loggedIn", "true");
+                sessionStorage.setItem("userRole", username);
                 window.location.href = "index.html"; 
             } else {
                 document.getElementById("errorMsg").style.display = "block";

@@ -5,7 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>AERI - Sobre Nosotros</title>
   <script>
-    if (!sessionStorage.getItem("loggedIn")) {
+    const loggedIn = sessionStorage.getItem("loggedIn");
+    const userRole = sessionStorage.getItem("userRole");
+
+    if (!loggedIn || (userRole !== "estudiante" && userRole !== "licenciado")) {
       window.location.href = "login.html"; 
     }
   </script>
