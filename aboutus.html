@@ -19,7 +19,8 @@
     .nav-link { color: #000000; }
     .nav-link.active { color: #ff69b4; }
     .navbar-brand { color: #000000; font-size: 25px; }
-    .card { background-color: #e0ffff; border-radius: 20px; border-color:#ffd868; }
+    .card { background-color: #e0ffff; border-radius: 30px; border:2px solid #ffd868; transition: transform 0.3s ease, box-shadow 0.3s ease;}
+    .card:hover {transform: scale(1.05);box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);}
     html, body { height: 100%; margin: 0; display: flex; flex-direction: column;} 
     .section {flex: 1; } 
     footer {background-color: #343a40; color: white; text-align: center;padding: 15px;}
