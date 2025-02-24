@@ -218,7 +218,7 @@
 
       if (loggedIn === "true") {
         document.getElementById("loginLogoutLink").textContent = "Cerrar Sesión";
-        if (userRole === "licenciado") {
+        if (userRole === "licenciado" || userRole === "team") {
           document.getElementById("portafolioLink").style.display = "block";
           document.getElementById("sobreNosotrosLink").style.display = "block";
         } else if (userRole === "estudiante") {

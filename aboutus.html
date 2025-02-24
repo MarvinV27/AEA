@@ -8,7 +8,7 @@
     const loggedIn = sessionStorage.getItem("loggedIn");
     const userRole = sessionStorage.getItem("userRole");
 
-    if (!loggedIn || (userRole !== "estudiante" && userRole !== "licenciado")) {
+    if (!loggedIn || (userRole !== "estudiante" && userRole !== "licenciado" && userRole !== "team")) {
       window.location.href = "login.html"; 
     }
   </script>
@@ -185,7 +185,7 @@
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       const userRole = sessionStorage.getItem("userRole");
-      if (userRole !== "licenciado") {
+      if (userRole !== "licenciado" && userRole !== "team") {
         document.getElementById("portafolioLink").style.display = "none";
       }
     });
