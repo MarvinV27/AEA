@@ -24,22 +24,82 @@
     .par2 { color: #000000; }
     .btn-primary { background-color: #ffd868; border-color: #000000; color: #000000; }
     
+    .timeline {
+      position: relative;
+      padding: 20px 0;
+    }
     
-    .card {
+    @media (min-width: 768px) {
+      .timeline::after {
+        content: '';
+        position: absolute;
+        width: 3px;
+        background-color: #000;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        margin-left: -1.5px;
+      }
+    }
+    
+    .timeline-item {
+      position: relative;
+      width: 100%;
+      padding: 10px 20px;
+      margin-bottom: 20px;
+    }
+    
+    
+    @media (min-width: 768px) {
+      .timeline-item {
+        width: 50%;
+      }
+      .timeline-item:nth-child(odd) {
+        left: 0;
+        text-align: right;
+      }
+      .timeline-item:nth-child(even) {
+        left: 50%;
+        text-align: left;
+      }
+    }
+    
+    .timeline-date {
+      font-size: 1rem;
+      color: #000;
+      padding: 0 10px;
+      margin-bottom: 20px;
+    }
+    .timeline-item .card {
+      display: inline-block;
+      width: 100%;
+      max-width: 18rem;
       background-color: #d0d0c3;
       border-radius: 10px;
       border: 3px solid #000000;
       transition: transform 0.3s ease, box-shadow 0.9s ease;
     }
-    .card-title { font-size: 1.5rem; color: #000000; }
-    .card:hover {
+    .timeline-item .card:hover {
       transform: scale(1.05);
       box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
     }
-    .section {  background: linear-gradient(200deg, rgba(245, 243, 230, 1), rgba(202, 188, 98, 0.8)); background-size: cover }
-    html, body { height: 100%; margin: 0; display: flex; flex-direction: column; }
-    .section { flex: 1; }
-    footer { background-color: #343a40; color: white; text-align: center; padding: 15px; }
+    
+   
+    @media (max-width: 767.98px) {
+      .timeline {
+        padding: 20px 0;
+      }
+      
+      .timeline::after {
+        display: none;
+      }
+      
+      .timeline-item {
+        width: 100%;
+        left: 0 !important;
+        text-align: center;
+      }
+    }
   </style>
 </head>
 <body>
@@ -72,46 +132,50 @@
     <div class="container">
       <h2 class="mb-7 text-center por2">Portafolio </h2>
       <p class="text-center mb-5 par2">Proyectos realizados por nuestro equipo de trabajo.</p>
-      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+      <div class="timeline">
         <!-- Proyecto 1 -->
-        <div class="col">
-          <div class="card h-100 shadow-sm">
-            <img src="./imgs/champ.png" class="card-img-top" alt="Proyecto 1">
+        <div class="timeline-item">
+          <div class="timeline-date">01/01/2025</div>
+          <div class="card shadow-sm">
+            <img src="./imgs/champ.png" class="card-img-top img-fluid" alt="Proyecto 1">
             <div class="card-body">
               <h5 class="card-title">Champfrogs</h5>
               <p class="card-text">Actividad 1 sobre motivadores</p>
               <a href="https://youtu.be/9qNeOP0jrQo" class="btn btn-primary" target="_blank">Video</a>
-              <a href="https://ugbedu-my.sharepoint.com/:w:/g/personal/smss070522_ugb_edu_sv/Eeq0fDTQUmhGr-GmUhkI_i8BIR67AlIyQMvbOpDHrR_58A?e=PMgjmB" class="btn btn-primary" target="_blank">Documento</a>
+              <a href="https://ugbedu-my.sharepoint.com/..." class="btn btn-primary" target="_blank">Documento</a>
             </div>
           </div>
         </div>
         <!-- Proyecto 2 -->
-        <div class="col">
-          <div class="card h-100 shadow-sm">
-            <img src="./imgs/work.png" class="card-img-top" alt="Proyecto 2">
+        <div class="timeline-item">
+          <div class="timeline-date">01/01/2025</div>
+          <div class="card shadow-sm">
+            <img src="./imgs/work.png" class="card-img-top img-fluid" alt="Proyecto 2">
             <div class="card-body">
               <h5 class="card-title">WORK EXPO</h5>
               <p class="card-text">Actividad 2 WORK EXPO</p>
               <a href="https://youtu.be/VDPLEuQL9PU" class="btn btn-primary" target="_blank">Video</a>
-              <a href="https://miro.com/app/board/uXjVLlY2gxw=/?share_link_id=702981624939" class="btn btn-primary" target="_blank">Tablero</a>
+              <a href="https://miro.com/..." class="btn btn-primary" target="_blank">Tablero</a>
             </div>
           </div>
         </div>
         <!-- Proyecto 3 -->
-        <div class="col">
-          <div class="card h-100 shadow-sm">
-            <img src="./imgs/okrs.png" class="card-img-top" alt="Proyecto 3">
+        <div class="timeline-item">
+          <div class="timeline-date">01/01/2025</div>
+          <div class="card shadow-sm">
+            <img src="./imgs/okrs.png" class="card-img-top img-fluid" alt="Proyecto 3">
             <div class="card-body">
               <h5 class="card-title">Creando OKRS</h5>
               <p class="card-text">Actividad 3 creando OKRS</p>
-              <a href="https://ugbedu-my.sharepoint.com/:w:/g/personal/smss070522_ugb_edu_sv/EQ_WEN9NGdNJlJEqkirPDFcBly4kQlcEYi5AuJKGCWf1XA?e=5lzEXX" class="btn btn-primary" target="_blank">Documento</a>
+              <a href="https://ugbedu-my.sharepoint.com/..." class="btn btn-primary" target="_blank">Documento</a>
             </div>
           </div>
         </div>
         <!-- Proyecto 4 -->
-        <div class="col">
-          <div class="card h-100 shadow-sm">
-            <img src="./imgs/negocio.png" class="card-img-top" alt="Proyecto 4">
+        <div class="timeline-item">
+          <div class="timeline-date">01/01/2025</div>
+          <div class="card shadow-sm">
+            <img src="./imgs/negocio.png" class="card-img-top img-fluid" alt="Proyecto 4">
             <div class="card-body">
               <h5 class="card-title">Caso de Negocio</h5>
               <p class="card-text">Actividad 4</p>
