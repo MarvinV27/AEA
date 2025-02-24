@@ -47,7 +47,7 @@
             <a class="nav-link" href="portafolio.html" id="portafolioLink">Portafolio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="login.html" id="loginLogoutLink">Iniciar Sesión</a>
+              <a class="nav-link" href="#" id="loginLogoutLink" onclick="toggleSesion(event)">Iniciar Sesión</a>
           </li>
         </ul>
       </div>
@@ -202,7 +202,8 @@
       window.location.href = "index.html";
     }
 
-    function toggleSesion() {
+    function toggleSesion(event) {
+      event.preventDefault();
       const loggedIn = sessionStorage.getItem("loggedIn");
       if (loggedIn === "true") {
         cerrarSesion();
