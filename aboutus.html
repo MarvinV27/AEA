@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AERI - Sobre Nosotros</title>
+  <script>
+    if (!sessionStorage.getItem("loggedIn")) {
+      window.location.href = "login.html"; 
+    }
+  </script>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .navbar { background-color: #ffd868; }
+    .nav-link { color: #000000; }
+    .nav-link.active { color: #ff69b4; }
+    .navbar-brand { color: #000000; font-size: 25px; }
+    .card { background-color: #e0ffff; border-radius: 20px; border-color:#ffd868; }
+    html, body { height: 100%; margin: 0; display: flex; flex-direction: column;} 
+    .section {flex: 1; } 
+    footer {background-color: #343a40; color: white; text-align: center;padding: 15px;}
+    .section{ background-color: #f5f3e6; }
+    .img-cuadrada {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin: 0 auto;
+    }
+    .motivador-container {
+      max-width: 12cm;
+      width: 100%;
+      height: 4cm;
+      overflow: hidden;
+      position: relative;
+      margin: 1rem auto;
+    }
+    .motivador-slide {
+      display: flex;
+      width: 300%;
+      animation: slide 10s linear infinite;
+    }
+    .motivador-slide img {
+      width: calc(250% / 3);
+      height: 100%;
+      object-fit: cover;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    @keyframes slide {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">AERI</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="#sobrenosotros">Sobre Nosotros</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="portafolio.html">Portafolio</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Seccion Sobre Nosotros -->
+  <section id="sobrenosotros" class="py-5 section" style="margin-top:40px;">
+    <div class="container">
+      <h2 class="mb-4 text-center">Sobre Nosotros</h2>
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+        <!-- Card Integrante 1 -->
+        <div class="col">
+          <div class="card h-100 shadow-sm">
+            <img src="./imgs/marvinf.jpeg" class="img-cuadrada mt-3" alt="Integrante 1">
+            <div class="card-body">
+              <h5 class="card-title text-center">Marvin Vigil</h5>
+              <p class="card-text text-center">
+                Habilidades: Desarrollo de software, IA, Deep learning y base de datos. Apasionado por la tecnología y la innovación.
+              </p>
+            </div>
+            <div class="motivador-container">
+              <div class="motivador-slide">
+                <img src="./imgs/marvinm.jpeg" alt="Motivadores">
+                <img src="./imgs/marvinm.jpeg" alt="Motivadores">
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Card Integrante 2 -->
+        <div class="col">
+          <div class="card h-100 shadow-sm">
+            <img src="./imgs/daniela.jpeg" class="img-cuadrada mt-3" alt="Integrante 2">
+            <div class="card-body">
+              <h5 class="card-title text-center">Daniela Mendez</h5>
+              <p class="card-text text-center">
+                Creativa y reflexiva, utiliza herramientas como React Native y Firebase para mejorar la experiencia del usuario.
+              </p>
+            </div>
+            <div class="motivador-container">
+              <div class="motivador-slide">
+                <img src="./imgs/danielam.jpeg" alt="Motivadores">
+                <img src="./imgs/danielam.jpeg" alt="Motivadores">
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Card Integrante 3 -->
+        <div class="col">
+          <div class="card h-100 shadow-sm">
+            <img src="./imgs/alfredoa.jpeg" class="img-cuadrada mt-3" alt="Integrante 3">
+            <div class="card-body">
+              <h5 class="card-title text-center">Alfredo Arana</h5>
+              <p class="card-text text-center">
+                Apasionado por la tecnología, enfocado en aprender y aplicar nuevas herramientas para lograr resultados efectivos.
+              </p>
+            </div>
+            <div class="motivador-container">
+              <div class="motivador-slide">
+                <img src="./imgs/alfredom.jpeg" alt="Motivadores">
+                <img src="./imgs/alfredom.jpeg" alt="Motivadores">
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Card Integrante 4 -->
+        <div class="col">
+          <div class="card h-100 shadow-sm">
+            <img src="./imgs/ferb.jpeg" class="img-cuadrada mt-3" alt="Integrante 4">
+            <div class="card-body">
+              <h5 class="card-title text-center">Jonathan Carrillo</h5>
+              <p class="card-text text-center">
+                Motivado por la tecnología innovadora, en búsqueda constante de optimizar la experiencia del usuario.
+              </p>
+            </div>
+            <div class="motivador-container">
+              <div class="motivador-slide">
+                <img src="./imgs/ferbm.jpeg" alt="Motivadores">
+                <img src="./imgs/ferbm.jpeg" alt="Motivadores">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Sección Conclusion -->
+  <section id="conclusion" class="py-5 section">
+    <div class="container">
+      <h2 class="mb-4 text-center">Conclusión</h2>
+      <p class="text-center">
+        Nuestro equipo está comprometido con la mejora continua y la innovación, trabajando para que AERI sea una herramienta de cambio en la regulación emocional infantil.
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white text-center py-3">
+    <div class="container">
+      <p class="mb-0">© 2025 AERI. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap Bundle con Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

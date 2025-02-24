@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AERI - Portafolio</title>
+  <script>
+    if (!sessionStorage.getItem("loggedIn")) {
+      window.location.href = "login.html"; 
+    }
+  </script>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .body { background-color: #f5f3e6; }
+    .navbar { background-color: #ffd868; }
+    .nav-link { color: #000000; }
+    .nav-link.active { color: #ff69b4; }
+    .navbar-brand { color: #000000; font-size: 25px; }
+    .card { background-color: #e0ffff; border-radius: 20px; border-color:#ffd868; }
+    .section{ background-color: #f5f3e6; }
+    html, body { height: 100%; margin: 0; display: flex; flex-direction: column;} 
+    .section {flex: 1; } 
+    footer {background-color: #343a40; color: white; text-align: center;padding: 15px;}
+
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">AERI</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="aboutus.html">Sobre Nosotros</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="#portafolio">Portafolio</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- Sección Portafolio -->
+  <section id="portafolio" class="py-5 section" style="margin-top:60px;">
+    <div class="container">
+      <h2 class="mb-4 text-center">Portafolio</h2>
+      <p class="text-center mb-5">Proyectos realizados por nuestro equipo de trabajo.</p>
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        <!-- Proyecto 1 -->
+        <div class="col">
+          <div class="card h-100 shadow-sm">
+            <img src="./imgs/champ.png" class="card-img-top" alt="Proyecto 1">
+            <div class="card-body">
+              <h5 class="card-title">Champfrogs</h5>
+              <p class="card-text">Actividad 1 sobre motivadores</p>
+              <a href="https://youtu.be/9qNeOP0jrQo" class="btn btn-primary" target="_blank">Video</a>
+              <a href="https://ugbedu-my.sharepoint.com/:w:/g/personal/smss070522_ugb_edu_sv/Eeq0fDTQUmhGr-GmUhkI_i8BIR67AlIyQMvbOpDHrR_58A?e=PMgjmB" class="btn btn-primary" target="_blank">Documento</a>
+            </div>
+          </div>
+        </div>
+        <!-- Proyecto 2 -->
+        <div class="col">
+          <div class="card h-100 shadow-sm">
+            <img src="./imgs/work.png" class="card-img-top" alt="Proyecto 2">
+            <div class="card-body">
+              <h5 class="card-title">WORK EXPO</h5>
+              <p class="card-text">Actividad 2 WORK EXPO</p>
+              <a href="https://youtu.be/VDPLEuQL9PU" class="btn btn-primary" target="_blank">Video</a>
+              <a href="https://miro.com/app/board/uXjVLlY2gxw=/?share_link_id=702981624939" class="btn btn-primary" target="_blank">Tablero</a>
+            </div>
+          </div>
+        </div>
+        <!-- Proyecto 3 -->
+        <div class="col">
+          <div class="card h-100 shadow-sm">
+            <img src="./imgs/okrs.png" class="card-img-top" alt="Proyecto 3">
+            <div class="card-body">
+              <h5 class="card-title">Creando OKRS</h5>
+              <p class="card-text">Actividad 3 creando OKRS</p>
+              <a href="https://ugbedu-my.sharepoint.com/:w:/g/personal/smss070522_ugb_edu_sv/EQ_WEN9NGdNJlJEqkirPDFcBly4kQlcEYi5AuJKGCWf1XA?e=5lzEXX" class="btn btn-primary" target="_blank">Documento</a>
+            </div>
+          </div>
+        </div>
+        <!-- Puedes agregar más proyectos aquí si lo requieres -->
+      </div>
+    </div>
+  </section>
+  
+  <!-- Footer -->
+  <footer class="bg-dark text-white text-center py-3">
+    <div class="container">
+      <p class="mb-0">© 2025 AERI. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+  
+  <!-- Bootstrap Bundle con Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
