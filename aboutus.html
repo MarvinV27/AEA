@@ -8,7 +8,7 @@
     const loggedIn = sessionStorage.getItem("loggedIn");
     const userRole = sessionStorage.getItem("userRole");
 
-    if (!loggedIn || (userRole !== "estudiante" && userRole !== "licenciado" && userRole !== "team")) {
+    if (!loggedIn || (userRole !== "estudiante" && userRole !== "armando" && userRole !== "team")) {
       window.location.href = "login.html"; 
     }
   </script>

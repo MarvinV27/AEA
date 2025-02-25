@@ -7,8 +7,7 @@
   <script>
     const loggedIn = sessionStorage.getItem("loggedIn");
     const userRole = sessionStorage.getItem("userRole");
-
-    if (!loggedIn || userRole !== "licenciado"  && userRole !== "team") {
+    if (!loggedIn || (userRole !== "armando" && userRole !== "team")) {
       window.location.href = "login.html"; 
     }
   </script>
@@ -49,7 +48,6 @@
       margin-bottom: 20px;
     }
     
-    
     @media (min-width: 768px) {
       .timeline-item {
         width: 50%;
@@ -84,16 +82,13 @@
       box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
     }
     
-   
     @media (max-width: 767.98px) {
       .timeline {
         padding: 20px 0;
       }
-      
       .timeline::after {
         display: none;
       }
-      
       .timeline-item {
         width: 100%;
         left: 0 !important;
@@ -130,56 +125,54 @@
   <!-- Sección Portafolio -->
   <section id="portafolio" class="py-5 section" style="margin-top:60px;">
     <div class="container">
-      <h2 class="mb-7 text-center por2">Portafolio </h2>
+      <h2 class="mb-7 text-center por2">Portafolio</h2>
       <p class="text-center mb-5 par2">Proyectos realizados por nuestro equipo de trabajo.</p>
       <div class="timeline">
         <!-- Proyecto 1 -->
         <div class="timeline-item">
-          <div class="timeline-date">01/01/2025</div>
+          <div class="timeline-date">27/01/2025</div>
           <div class="card shadow-sm">
             <img src="./imgs/champ.png" class="card-img-top img-fluid" alt="Proyecto 1">
             <div class="card-body">
               <h5 class="card-title">Champfrogs</h5>
               <p class="card-text">Actividad 1 sobre motivadores</p>
-              <a href="https://youtu.be/9qNeOP0jrQo" class="btn btn-primary" target="_blank">Video</a>
-              <a href="https://ugbedu-my.sharepoint.com/..." class="btn btn-primary" target="_blank">Documento</a>
+              <a href="./acti/acticham.html" class="btn btn-primary">Ver Actividad</a>
             </div>
           </div>
         </div>
         <!-- Proyecto 2 -->
         <div class="timeline-item">
-          <div class="timeline-date">01/01/2025</div>
+          <div class="timeline-date">02/02/2025</div>
           <div class="card shadow-sm">
             <img src="./imgs/work.png" class="card-img-top img-fluid" alt="Proyecto 2">
             <div class="card-body">
               <h5 class="card-title">WORK EXPO</h5>
               <p class="card-text">Actividad 2 WORK EXPO</p>
-              <a href="https://youtu.be/VDPLEuQL9PU" class="btn btn-primary" target="_blank">Video</a>
-              <a href="https://miro.com/..." class="btn btn-primary" target="_blank">Tablero</a>
+              <a href="./acti/actwork.html" class="btn btn-primary">Ver Actividad</a>
             </div>
           </div>
         </div>
         <!-- Proyecto 3 -->
         <div class="timeline-item">
-          <div class="timeline-date">01/01/2025</div>
+          <div class="timeline-date">09/02/2025</div>
           <div class="card shadow-sm">
             <img src="./imgs/okrs.png" class="card-img-top img-fluid" alt="Proyecto 3">
             <div class="card-body">
               <h5 class="card-title">Creando OKRS</h5>
               <p class="card-text">Actividad 3 creando OKRS</p>
-              <a href="https://ugbedu-my.sharepoint.com/..." class="btn btn-primary" target="_blank">Documento</a>
+              <a href="./acti/actokrs.html" class="btn btn-primary">Ver Actividad</a>
             </div>
           </div>
         </div>
         <!-- Proyecto 4 -->
         <div class="timeline-item">
-          <div class="timeline-date">01/01/2025</div>
+          <div class="timeline-date">23/03/2025</div>
           <div class="card shadow-sm">
             <img src="./imgs/negocio.png" class="card-img-top img-fluid" alt="Proyecto 4">
             <div class="card-body">
               <h5 class="card-title">Caso de Negocio</h5>
               <p class="card-text">Actividad 4</p>
-              <a href="caso de negocio.pdf" class="btn btn-primary" target="_blank">Abrir PDF</a>
+              <a href="./acti/actcaso.html" class="btn btn-primary">Ver Actividad</a>
             </div>
           </div>
         </div>
