@@ -15,7 +15,7 @@
       console.log("userRole:", userRole);
 
       if (!loggedIn || (userRole !== "armando" && userRole !== "team")) {
-        window.location.href = "/login.html"; 
+        window.location.href = "login.html"; 
       }
     });
   </script>
@@ -69,7 +69,6 @@
       width: 100%;
       z-index: 1000;
     }
-    
   </style>
 </head>
 <body>
@@ -84,8 +83,9 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
+            
             <li class="nav-item">
-              <a class="nav-link" href="/portafolio.html">Portafolio</a>
+              <a class="nav-link" href="../portafolio.html">Portafolio</a>
             </li>
           </ul>
         </div>
@@ -93,11 +93,12 @@
     </nav>
   </header>
   
-
+ 
   <div class="main-container">
     <div class="section">
       <h3 class="section-title">Actividad CHAMFROGS - Documento</h3>
       <div class="pdf-container" id="pdfContainer">
+        
         <iframe src="../docs/motivadores.pdf" allowfullscreen></iframe>
       </div>
     </div>
