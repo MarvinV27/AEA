@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CASO DE NEGOCIO</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          const loggedIn = sessionStorage.getItem("loggedIn");
+          const userRole = sessionStorage.getItem("userRole");
+    
+          console.log("loggedIn:", loggedIn);
+          console.log("userRole:", userRole);
+    
+          if (!loggedIn || (userRole !== "armando" && userRole !== "team")) {
+            window.location.href = "/login.html"; 
+          }
+        });
+      </script>
+    <style>
+        body {background-color: #f5f3e6;}
+        .navbar { background-color: #ffd868; }
+        .nav-link { color: #000000; transition: color 0.3s ease; }
+        .nav-link:hover, .nav-link.active { color: #ff0101; }
+        .navbar-brand { color: #000000; font-size: 25px; }
+        .header {
+            background-color: #343a40;
+            color: white;
+            padding: 20px 0;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .card {
+            margin-bottom: 15px;
+        }
+        .card-header {
+            cursor: pointer;
+            background-color: #f8f9fa;
+        }
+        .card-header:hover {
+            background-color: #e9ecef;
+        }
+        .page-footer {
+            background-color: #343a40;
+            color: white;
+            padding: 15px 0;
+            margin-top: 20px;
+            text-align: center;
+        }
+        .table-container {
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+          <div class="container">
+            <a class="navbar-brand" href="#">AEA</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="../portafolio.html">Portafolio</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+
+
+
+    <div class="header">
+        <div class="container">
+            <h1>CASO DE NEGOCIO</h1>
+            <h2>IMPLEMENTACIÓN DE ASISTENTE EMOCIONAL AUTÓNOMO PARA CLÍNICA PSICOLÓGICA UGB SAN MIGUEL</h2>
+            <p>PROYECTO DESARROLLADO POR BLACKCODE</p>
+            <p>SAN MIGUEL, FEBRERO 2025</p>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <!-- Resumen Ejecutivo -->
+        
+
+        <!-- 1. Identificación del Proyecto -->
+        <div class="card mb-4" id="identificacion">
+            <div class="card-header d-flex justify-content-between align-items-center" data-bs-toggle="collapse" data-bs-target="#identificacionCollapse">
+                <h3 class="mb-0">1. Identificación del Proyecto</h3>
+                <i class="bi bi-chevron-down"></i>
+            </div>
+            <div class="collapse" id="identificacionCollapse">
+                <div class="card-body">
+                    <div class="row mb-3">
+                        <div class="col-md-4"><strong>Nombre del proyecto:</strong></div>
+                        <div class="col-md-8">Asistente Emocional Autónomo</div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-4"><strong>Empresa que desarrolla el proyecto:</strong></div>
+                        <div class="col-md-8">BlackCode</div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-4"><strong>Nombre de la persona que ejerza como representante legal:</strong></div>
+                        <div class="col-md-8">Marvin Vigil</div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-4"><strong>Dirección, teléfono, email:</strong></div>
+                        <div class="col-md-8">
+                            Col Carmenza<br>
+                            79548449<br>
+                            Marvinvigil74@gmail.com
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-4"><strong>Fecha inicio:</strong></div>
+                        <div class="col-md-8">20 de enero de 2025</div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-4"><strong>Fecha Fin:</strong></div>
+                        <div class="col-md-8">25 de junio de 2025</div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-4"><strong>Cliente:</strong></div>
+                        <div class="col-md-8">Clínica Psicológica UGB</div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-4"><strong>Patrocinador:</strong></div>
+                        <div class="col-md-8">Universidad Gerardo Barrios</div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-4"><strong>Tipo de Proyecto:</strong></div>
+                        <div class="col-md-8">CAPEX</div>
+                    </div>
+                </div>
+                <div class="card mb-3">
+                    <div class="card-header d-flex justify-content-between align-items-center" data-bs-toggle="collapse" data-bs-target="#resumenCollapse">
+                        <h4 class="mb-0">1.1 RESUMEN EJECUTIVO</h4>
+                        <i class="bi bi-chevron-down"></i>
+                    </div>
+                    <div class="collapse" id="resumenCollapse">
+                        <div class="card-body">
+                            <p>El Asistente Emocional Autónomo es un innovador dispositivo basado en inteligencia artificial diseñado para apoyar la regulación emocional en personas de diferentes edades. Su desarrollo responde a la creciente necesidad de herramientas tecnológicas que faciliten el manejo de las emociones y el bienestar mental en distintos contextos, desde el hogar hasta entornos educativos y laborales.</p>
+                            
+                            <p>Este asistente cuenta con tres versiones diferenciadas según la edad del usuario:</p>
+                            <ul>
+                                <li><strong>Versión Infantil:</strong> Diseñada para niños, enfocada en el reconocimiento y expresión de emociones básicas, promoviendo la educación emocional desde una etapa temprana.</li>
+                                <li><strong>Versión Adolescente:</strong> Adaptada a los desafíos emocionales de esta etapa, con funciones que ayudan a gestionar el estrés, la ansiedad y la toma de decisiones.</li>
+                                <li><strong>Versión Adulta:</strong> Orientada a la autorregulación emocional y el bienestar mental, con herramientas para el manejo del estrés, la productividad y la resiliencia.</li>
+                            </ul>
+                            
+                            <p>Cada versión utiliza tecnologías avanzadas de reconocimiento facial, procesamiento de lenguaje natural y aprendizaje automático para identificar el estado emocional del usuario y ofrecer respuestas personalizadas. Esto permite una interacción fluida y empática, ajustando el tipo de apoyo según la edad y las necesidades emocionales específicas.</p>
+                            
+                            <p>El proyecto será desarrollado por un equipo multidisciplinario conformado por expertos en inteligencia artificial, desarrollo de software, robótica, psicología y neurociencia, garantizando un enfoque integral y basado en evidencia científica. La implementación se llevará a cabo en varias fases:</p>
+                            <ol>
+                                <li>Investigación y Desarrollo: Estudio de necesidades emocionales por edad y diseño del modelo de inteligencia artificial.</li>
+                                <li>Prototipado y Pruebas: Creación de versiones funcionales y evaluación con usuarios en entornos controlados.</li>
+                                <li>Optimización y Producción: Ajustes según los resultados de las pruebas y preparación para la producción a gran escala.</li>
+                                <li>Lanzamiento y Comercialización: Introducción en el mercado con estrategias de adopción en familias, escuelas y centros de salud.</li>
+                                <li>El impacto del asistente se medirá mediante indicadores clave como la tasa de adopción, la mejora en la expresión y regulación emocional de los usuarios, y la satisfacción de clientes y especialistas en salud mental.</li>
+                            </ol>
+                            
+                            <p>Con este proyecto, se busca democratizar el acceso a herramientas de apoyo emocional, brindando una solución accesible, intuitiva y efectiva para cualquier persona que desee mejorar su bienestar mental a través de la tecnología.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. Necesidades del Negocio -->
+        <div class="card mb-4" id="necesidades">
+            <div class="card-header d-flex justify-content-between align-items-center" data-bs-toggle="collapse" data-bs-target="#necesidadesCollapse">
+                <h3 class="mb-0">2. Necesidades del Negocio</h3>
+                <i class="bi bi-chevron-down"></i>
+            </div>
+            <div class="collapse" id="necesidadesCollapse">
+                <div class="card-body">
+                    <!-- 2.1 Justificación -->
+                    <div class="card mb-3">
+                        <div class="card-header d-flex justify-content-between align-items-center" data-bs-toggle="collapse" data-bs-target="#justificacionCollapse">
+                            <h4 class="mb-0">2.1 Justificación</h4>
+                            <i class="bi bi-chevron-down"></i>
+                        </div>
+                        <div class="collapse" id="justificacionCollapse">
+                            <div class="card-body">
+                                <p>En la actualidad, muchas personas, desde la infancia hasta la adultez, enfrentan dificultades para expresar y manejar sus emociones, lo que puede afectar su desarrollo personal, social y profesional. La falta de herramientas accesibles y efectivas para guiar a niños, adolescentes y adultos en la gestión emocional representa un desafío tanto para las familias como para los educadores y profesionales de la salud mental.</p>
+                                
+                                <p>Este proyecto tiene como objetivo crear una solución innovadora basada en inteligencia artificial y robótica que ayude a las personas de todas las edades a identificar, expresar y regular sus emociones de manera lúdica e interactiva. Para los niños, el enfoque se centrará en el aprendizaje mediante el juego y la exploración guiada; para los adolescentes, se integrarán dinámicas que fomenten el autoconocimiento y la resiliencia; y para los adultos, se ofrecerán herramientas que faciliten la gestión del estrés y el desarrollo de habilidades socioemocionales en distintos ámbitos, incluyendo el laboral y el personal.</p>
+                                
+                                <p>El problema que solucionará el proyecto es la carencia de recursos accesibles y personalizados que fomenten el desarrollo de la inteligencia emocional en diferentes etapas de la vida. Nuestra propuesta integrará tecnologías avanzadas para proporcionar un apoyo efectivo, adaptado a las necesidades específicas de cada grupo etario.</p>
+                                
+                                <p>El valor del proyecto radica en la implementación de una plataforma interactiva que combina IA y robótica para asistir a las personas en su desarrollo emocional, promoviendo su bienestar y fortaleciendo sus habilidades socioemocionales. Su impacto beneficiará a individuos, familias, docentes, empresas e instituciones educativas y de salud, ofreciendo una herramienta innovadora y accesible.</p>
+                                
+                                <p><strong>Métricas e indicadores de éxito:</strong></p>
+                                <ul>
+                                    <li>Cantidad de usuarios activos en la plataforma, segmentados por edad.</li>
+                                    <li>Niveles de mejora en la expresión y regulación emocional, evaluados antes y después del uso de la plataforma.</li>
+                                    <li>Satisfacción de usuarios, familias, educadores y empresas, basada en encuestas y retroalimentación.</li>
+                                    <li>Integración efectiva con hardware de robótica y sistemas domóticos, asegurando una experiencia inmersiva y personalizada.</li>
+                                    <li>Expansión del proyecto a instituciones educativas, empresas y centros de salud mental, demostrando su impacto y escalabilidad.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2.2 Interesados Afectados -->
+                    <div class="card mb-3">
+                        <div class="card-header d-flex justify-content-between align-items-center" data-bs-toggle="collapse" data-bs-target="#interesadosCollapse">
+                            <h4 class="mb-0">2.2 Interesados Afectados</h4>
+                            <i class="bi bi-chevron-down"></i>
+                        </div>
+                        <div class="collapse" id="interesadosCollapse">
+                            <div class="card-body">                                
+                                <div class="table-container">
+                                    <table class="table table-bordered">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th>Nombre</th>
+                                                <th>Departamento</th>
+                                                <th>Cargo</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Marvin Gonzalez</td>
+                                                <td>Desarrollo de IA</td>
+                                                <td>Desarrollador de IA</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Daniela Méndez</td>
+                                                <td>Diseño de Producto</td>
+                                                <td>Diseñadora UX/UI</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Alfredo Arana</td>
+                                                <td>Robótica y Domótica</td>
+                                                <td>Encargado de la robótica y domótica del proyecto</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Jonathan Valencia</td>
+                                                <td>Desarrollador de Software</td>
+                                                <td>Programador</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Proveedores</td>
+                                                <td>Suministro de componentes</td>
+                                                <td>Empresas proveedores de hardware y software</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Usuarios finales</td>
+                                                <td>Consumidores</td>
+                                                <td>Pacientes y Psicólogos</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Empresa patrocinadora</td>
+                                                <td>Financiamiento</td>
+                                                <td>Organización que brinda el respaldo financiero al proyecto</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Psicólogos</td>
+                                                <td>Asesoría</td>
+                                                <td>Expertos en desarrollo emocional, apoyarán el diseño del contenido</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Distribuidores</td>
+                                                <td>Comercialización</td>
+                                                <td>Empresa encargada de la distribución del producto</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2.3 Alcance del Proyecto -->
+                    <div class="card mb-3">
+                        <div class="card-header d-flex justify-content-between align-items-center" data-bs-toggle="collapse" data-bs-target="#alcanceCollapse">
+                            <h4 class="mb-0">2.3 Alcance del Proyecto</h4>
+                            <i class="bi bi-chevron-down"></i>
+                        </div>
+                        <div class="collapse" id="alcanceCollapse">
+                            <div class="card-body">
+                                <p>- El proyecto abarca el diseño, desarrollo e implementación de una plataforma interactiva basada en IA con integración de robótica y domótica. Esto incluirá el desarrollo de software para la interacción con los usuarios, pruebas de compatibilidad con hardware específico y la capacitación para su correcto uso en entornos educativos y terapéuticos. También se considerará la implementación de módulos de aprendizaje emocional adaptativo y herramientas de monitoreo para evaluar el progreso de los pacientes.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. ANÁLISIS DE LA SITUACIÓN -->
+        <div class="card mb-4" id="analisis">
+            <div class="card-header d-flex justify-content-between align-items-center" data-bs-toggle="collapse" data-bs-target="#analisisCollapse">
+                <h3 class="mb-0">3. ANÁLISIS DE LA SITUACIÓN</h3>
+                <i class="bi bi-chevron-down"></i>
+            </div>
+            <div class="collapse" id="analisisCollapse">
+                <div class="card-body">
+                    <p>El proyecto del Asistente Emocional Autónomo (AEA) surge como una solución innovadora para apoyar la regulación emocional en personas de distintas edades. En la actualidad, muchas familias, educadores y profesionales de la salud enfrentan desafíos para brindar un adecuado acompañamiento emocional debido a la falta de tiempo, herramientas especializadas o conocimientos en inteligencia emocional.</p>
+                    
+                    <p>Además, tanto niños como adolescentes y adultos pueden experimentar dificultades para reconocer, expresar y gestionar sus emociones, lo que puede afectar su bienestar mental, sus relaciones interpersonales y su desarrollo personal. La creciente demanda de soluciones tecnológicas para la salud emocional evidencia la necesidad de herramientas accesibles y efectivas que ayuden a mejorar la autoconciencia y la regulación emocional en diferentes etapas de la vida.</p>
+                    
+                    <p>EL AEA busca abordar esta problemática mediante el uso de inteligencia artificial avanzada y modelos de interacción personalizados, brindando un apoyo adaptado a las necesidades específicas de cada usuario, según su edad y contexto emocional.</p>
+
+                    <!-- 3.1 ESTRATEGIAS, METAS Y OBJETIVOS DE LA EMPRESA -->
+                    <div class="card mb-3">
+    <div class="card-header d-flex justify-content-between align-items-center" data-bs-toggle="collapse" data-bs-target="#estrategiasCollapse">
+        <h4 class="mb-0">3.1 ESTRATEGIAS, METAS Y OBJETIVOS DE LA UNIVERSIDAD</h4>
+        <i class="bi bi-chevron-down"></i>
+    </div>
+    <div class="collapse" id="estrategiasCollapse">
+        <div class="card-body">
+            <!-- 3.1.1 ESTRATEGIAS -->
+            <h5>3.1.1 ESTRATEGIAS</h5>
+            <ul>
+                <li>Implementar programas de formación continua para docentes y alumnos.</li>
+                <li>Fomentar la educación virtual y el uso de plataformas digitales.</li>
+                <li>Desarrollar proyectos de investigación aplicados a las necesidades del entorno.</li>
+                <li>Fortalecer la internacionalización mediante convenios con otras universidades.</li>
+                <li>Crear programas de becas para ampliar el acceso a la educación superior.</li>
+            </ul>
+
+            <!-- 3.1.2 METAS -->
+            <h5>3.1.2 METAS</h5>
+            <ul>
+                <li>Mejorar la calidad educativa a través de la actualización curricular y la capacitación docente.</li>
+                <li>Incentivar la producción científica que aporte soluciones a problemas nacionales y regionales.</li>
+                <li>Modernizar los campus y dotar de mejores herramientas tecnológicas a los estudiantes.</li>
+                <li>Establecer alianzas estratégicas con el sector empresarial y gubernamental.</li>
+                <li>Aumentar la oferta académica y la cobertura educativa.</li>
+            </ul>
+
+            <!-- 3.1.3 OBJETIVOS -->
+            <h5>3.1.3 OBJETIVOS</h5>
+            <ul>
+                <li>Formar profesionales altamente capacitados con un enfoque en la innovación, la ética y el desarrollo sostenible.</li>
+                <li>Promover la investigación y el vínculo con la comunidad para contribuir al progreso de El Salvador.</li>
+                <li>Desarrollar estrategias de aprendizaje que se adapten a las necesidades cambiantes del mercado laboral.</li>
+                <li>Fortalecer la infraestructura y la tecnología para ofrecer educación de calidad.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+                    <!-- 3.2 PROBLEMA/CAUSA RAÍZ U OPORTUNIDAD -->
+                    <div class="card mb-3">
+                        <div class="card-header d-flex justify-content-between align-items-center" data-bs-toggle="collapse" data-bs-target="#problemaCollapse">
+                            <h4 class="mb-0">3.2 PROBLEMA/CAUSA RAÍZ U OPORTUNIDAD</h4>
+                            <i class="bi bi-chevron-down"></i>
+                        </div>
+                        <div class="collapse" id="problemaCollapse">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <h5>Problema</h5>
+                                        <ul>
+                                            <li>La falta de herramientas accesibles y efectivas para ayudar a las personas a comprender y gestionar sus emociones puede impactar negativamente en su bienestar emocional y social.</li>
+                                            <li>Aumento de trastornos emocionales y de ansiedad en niños, adolescentes y adultos mayores debido a la falta de mecanismos de apoyo emocional.</li>
+                                            <li>Dificultades en la comunicación de emociones en personas con condiciones como autismo o demencia senil.</li>
+                                            <li>Falta de integración de la tecnología en la asistencia emocional en el hogar y en centros de cuidado.</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h5>Oportunidad</h5>
+                                        <ul>
+                                            <li>El desarrollo de una gama de dispositivos con inteligencia artificial ofrece una solución innovadora para asistir a niños, adolescentes y adultos mayores en la regulación emocional, promoviendo su bienestar y fortaleciendo su inteligencia emocional.</li>
+                                            <li>Creación de un mercado emergente para dispositivos de asistencia emocional con IA.</li>
+                                            <li>Potencial para la implementación en entornos educativos y centros de cuidado para mejorar la interacción emocional de los usuarios.</li>
+                                            <li>Posibilidad de colaboración con profesionales de la salud mental para desarrollar terapias complementarias mediante el uso de tecnología.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3.3 BRECHAS: CAPACIDADES REQUERIDAS VS. ACTUALES -->
+                    <div class="card mb-3">
+                        <div class="card-header d-flex justify-content-between align-items-center" data-bs-toggle="collapse" data-bs-target="#brechasCollapse">
+                            <h4 class="mb-0">3.3 BRECHAS: CAPACIDADES REQUERIDAS VS. ACTUALES</h4>
+                            <i class="bi bi-chevron-down"></i>
+                        </div>
+                        <div class="collapse" id="brechasCollapse">
+                            <div class="card-body">
+                                <div class="table-container">
+                                    <table class="table table-bordered">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th>Capacidades requeridas</th>
+                                                <th>Capacidades actuales</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Desarrollo de inteligencia artificial avanzada</td>
+                                                <td>Equipo con experiencia en IA básica</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Integración de sensores de reconocimiento facial y de voz</td>
+                                                <td>Conocimiento en sensores básico</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Diseño y fabricación de hardware especializado</td>
+                                                <td>Experiencia en diseño de productos electrónicos</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Pruebas con usuarios de diferentes edades</td>
+                                                <td>Falta de experiencia en pruebas intergeneracionales</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3.4 RIESGOS CONOCIDOS -->
+                    <div class="card mb-3">
+                        <div class="card-header d-flex justify-content-between align-items-center" data-bs-toggle="collapse" data-bs-target="#riesgosCollapse">
+                            <h4 class="mb-0">3.4 RIESGOS CONOCIDOS</h4>
+                            <i class="bi bi-chevron-down"></i>
+                        </div>
+                        <div class="collapse" id="riesgosCollapse">
+                            <div class="card-body">
+                                <ul>
+                                    <li>Dificultades técnicas en la precisión del reconocimiento de emociones.</li>
+                                    <li>Posible resistencia de los usuarios a adoptar tecnologías avanzadas para el bienestar emocional.</li>
+                                    <li>Costos elevados en el desarrollo e integración de tecnologías.</li>
+                                    <li>Necesidad de cumplimiento de normativas de seguridad infantil y de asistencia para adultos mayores.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3.5 FACTORES CRÍTICOS DE ÉXITO (FCE) -->
+                    <div class="card mb-3">
+                        <div class="card-header d-flex justify-content-between align-items-center" data-bs-toggle="collapse" data-bs-target="#factoresCollapse">
+                            <h4 class="mb-0">3.5 FACTORES CRÍTICOS DE ÉXITO (FCE)</h4>
+                            <i class="bi bi-chevron-down"></i>
+                        </div>
+                        <div class="collapse" id="factoresCollapse">
+                            <div class="card-body">
+                                <ul>
+                                    <li>Desarrollo eficaz del sistema de inteligencia artificial.</li>
+                                    <li>Validación y retroalimentación de expertos en psicología y bienestar emocional.</li>
+                                    <li>Aceptación del producto por parte de usuarios de todas las edades.</li>
+                                    <li>Implementación de estrategias de marketing efectivas para posicionar la línea de productos en el mercado.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card mb-3">
+                        <div class="card-header d-flex justify-content-between align-items-center" data-bs-toggle="collapse" data-bs-target="#criteriosCollapse">
+                          <h4 class="mb-0">3.6 CRITERIOS DE DECISIÓN</h4>
+                          <i class="bi bi-chevron-down"></i>
+                        </div>
+                        <div class="collapse" id="criteriosCollapse">
+                          <div class="card-body">
+                            <p>Identificar los criterios de decisión mediante los cuales se puede evaluar los diferentes cursos de acción del proyecto a desarrollar.</p>
+                            <div class="table-responsive">
+                              <table class="table table-bordered">
+                                <thead class="table-light">
+                                  <tr>
+                                    <th>Categorías</th>
+                                    <th>Requerido</th>
+                                    <th>Deseable</th>
+                                    <th>Opcional</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td>Asistente emocional autónomo</td>
+                                    <td></i></td>
+                                    <td class="text-center"> X <i class="bi bi-check-lg text-success"></td>
+                                    <td></td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <!-- 3.7 IMPACTO DEL PROYECTO -->
+                      <div class="card mb-3">
+                        <div class="card-header d-flex justify-content-between align-items-center" data-bs-toggle="collapse" data-bs-target="#impactoCollapse">
+                          <h4 class="mb-0">3.7 IMPACTO DEL PROYECTO</h4>
+                          <i class="bi bi-chevron-down"></i>
+                        </div>
+                        <div class="collapse" id="impactoCollapse">
+                          <div class="card-body">
+                            <p>Indicar el impacto que tendría el proyecto para la empresa o usuarios.</p>
+                            <div class="table-responsive">
+                              <table class="table table-bordered">
+                                <tbody>
+                                  <tr>
+                                    <th class="table-light" style="width: 25%">Tecnología</th>
+                                    <td>Avance en inteligencia artificial aplicada al bienestar emocional de todas las edades.</td>
+                                  </tr>
+                                  <tr>
+                                    <th class="table-light">Procesos</th>
+                                    <td>Implementación de tecnologías de reconocimiento de emociones en productos comerciales.</td>
+                                  </tr>
+                                  <tr>
+                                    <th class="table-light">Estructura</th>
+                                    <td>Creación de un equipo multidisciplinario para el desarrollo del producto.</td>
+                                  </tr>
+                                  <tr>
+                                    <th class="table-light">Cultura</th>
+                                    <td>Mayor concienciación sobre la importancia de la inteligencia emocional en todas las edades.</td>
+                                  </tr>
+                                  <tr>
+                                    <th class="table-light">Habilidades del personal</th>
+                                    <td>Desarrollo de competencias en IA, diseño de productos y pruebas con usuarios.</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <!-- 3.8 CONJUNTO DE OPCIONES -->
+                      <div class="card mb-3">
+                        <div class="card-header d-flex justify-content-between align-items-center" data-bs-toggle="collapse" data-bs-target="#opcionesCollapse">
+                          <h4 class="mb-0">3.8 CONJUNTO DE OPCIONES</h4>
+                          <i class="bi bi-chevron-down"></i>
+                        </div>
+                        <div class="collapse" id="opcionesCollapse">
+                          <div class="card-body">
+                            <p>Identificar el conjunto de opciones a tener en cuenta para abordar el problema o la oportunidad de negocio. Las opciones también pueden describirse como escenarios de negocios.</p>
+                            <div class="table-responsive">
+                              <table class="table table-bordered">
+                                <thead class="table-light">
+                                  <tr>
+                                    <th>Acciones Posibles</th>
+                                    <th>Observaciones</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td>1. Desarrollar la plataforma del psicólogo.</td>
+                                    <td>Permitirá a los especialistas monitorear el estado emocional de los pacientes y brindar recomendaciones basadas en datos.</td>
+                                  </tr>
+                                  <tr>
+                                    <td>2. Desarrollo del Asistente Emocional Autónomo según la edad.</td>
+                                    <td>Se adaptará a las necesidades emocionales específicas de cada grupo etario, ofreciendo respuestas y actividades personalizadas.</td>
+                                  </tr>
+                                  <tr>
+                                    <td>3. Desarrollar la APP para los pacientes</td>
+                                    <td>Proporcionará acceso a ejercicios emocionales, seguimiento del estado anímico y herramientas de bienestar desde dispositivos móviles.</td>
+                                  </tr>
+                                  <tr>
+                                    <td>4. Sistema de recomendaciones y aprendizaje.</td>
+                                    <td>Utilizará IA para aprender de las interacciones del usuario y mejorar la precisión de las respuestas y sugerencias emocionales.</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- 4. RECOMENDACIÓN -->
+        <div class="card mb-3">
+            <div class="card-header d-flex justify-content-between align-items-center" data-bs-toggle="collapse" data-bs-target="#recomendacionCollapse">
+              <h3 class="mb-0">4. RECOMENDACIÓN</h3>
+              <i class="bi bi-chevron-down"></i>
+            </div>
+            <div class="collapse" id="recomendacionCollapse">
+              <div class="card-body">
+                <p>En esta sección se deberá presentar un análisis de las opciones, el análisis financiero y los hitos para el desarrollo e implementación del proyecto.</p>
+                
+                <!-- 4.1 ENUNCIADO -->
+                <h4 class="mt-4">4.1 ENUNCIADO</h4>
+                <h5>Resultado del Análisis</h5>
+                <p>En esta sección se deberá presentar un análisis para cada una opción del conjunto de opciones presentadas en la sección anterior.</p>
+                
+                <div class="table-responsive mb-4">
+                  <table class="table table-bordered">
+                    <thead class="table-light">
+                      <tr>
+                        <th>Acciones posibles</th>
+                        <th>Resultados del Análisis</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>1. Desarrollar la plataforma del psicólogo</td>
+                        <td>Permite a los psicólogos realizar un seguimiento detallado del estado emocional de los pacientes, personalizando las terapias. Sin embargo, requiere integración con sistemas de salud y certificaciones.</td>
+                      </tr>
+                      <tr>
+                        <td>2. Desarrollo del Asistente Emocional Autónomo según la edad</td>
+                        <td>Se adapta a distintos grupos etarios con respuestas y actividades personalizadas. Requiere un alto desarrollo en IA para diferenciar emociones por edad y contexto.</td>
+                      </tr>
+                      <tr>
+                        <td>3. Desarrollar la APP para los pacientes</td>
+                        <td>Brinda acceso directo a herramientas de bienestar, ejercicios emocionales y seguimiento del estado anímico. Es clave para la accesibilidad, pero depende de la aceptación del usuario final.</td>
+                      </tr>
+                      <tr>
+                        <td>4. Sistema de recomendaciones y aprendizaje</td>
+                        <td>La IA mejorará continuamente según las interacciones del usuario, lo que permitirá recomendaciones más precisas con el tiempo. Sin embargo, necesita una gran cantidad de datos para su optimización.</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                
+                <h5>Restricciones / Limitaciones</h5>
+                <p>Para cada una opción del conjunto de opciones presentadas en la sección anterior presentar las restricciones y limitaciones encontradas para su desarrollo e implementación.</p>
+                
+                <div class="table-responsive mb-4">
+                  <table class="table table-bordered">
+                    <thead class="table-light">
+                      <tr>
+                        <th>Acciones posibles</th>
+                        <th>Restricciones</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>1. Desarrollar la plataforma del psicólogo</td>
+                        <td>Requiere certificaciones de seguridad y cumplimiento con normativas de salud (ej. HIPAA, GDPR).</td>
+                      </tr>
+                      <tr>
+                        <td>2. Desarrollo del Asistente Emocional Autónomo según la edad</td>
+                        <td>Se necesita una base de datos extensa para el entrenamiento de la IA, lo que puede generar problemas de privacidad.</td>
+                      </tr>
+                      <tr>
+                        <td>3. Desarrollar la APP para los pacientes</td>
+                        <td>Puede haber resistencia de los usuarios a compartir información emocional en una plataforma digital.</td>
+                      </tr>
+                      <tr>
+                        <td>4. Sistema de recomendaciones y aprendizaje</td>
+                        <td>Requiere modelos avanzados de IA y una infraestructura robusta para el procesamiento de datos en tiempo real.</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                
+                <h5>Supuestos Estratégicos</h5>
+                <p>Para cada una opción del conjunto de opciones presentadas en la sección anterior presentar los supuestos estratégicos encontradas para su desarrollo e implementación.</p>
+                
+                <div class="table-responsive mb-4">
+                  <table class="table table-bordered">
+                    <thead class="table-light">
+                      <tr>
+                        <th>Acciones posibles</th>
+                        <th>Supuestos</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>1. Desarrollar la plataforma del psicólogo</td>
+                        <td>Los especialistas estarán dispuestos a utilizar la plataforma y realizar el seguimiento digital de los pacientes.</td>
+                      </tr>
+                      <tr>
+                        <td>2. Desarrollo del Asistente Emocional Autónomo según la edad</td>
+                        <td>La IA podrá identificar patrones emocionales con precisión para distintos grupos de edad.</td>
+                      </tr>
+                      <tr>
+                        <td>3. Desarrollar la APP para los pacientes</td>
+                        <td>Los usuarios tendrán acceso a dispositivos móviles y estarán dispuestos a utilizar la aplicación con regularidad.</td>
+                      </tr>
+                      <tr>
+                        <td>4. Sistema de recomendaciones y aprendizaje</td>
+                        <td>La recopilación de datos será suficiente para mejorar el sistema sin generar preocupaciones éticas.</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                
+                <h5>Riesgos</h5>
+                <p>Para cada una opción del conjunto de opciones presentadas en la sección anterior presentar los riesgos encontradas para su desarrollo e implementación.</p>
+                
+                <div class="table-responsive mb-4">
+                  <table class="table table-bordered">
+                    <thead class="table-light">
+                      <tr>
+                        <th>Acciones posibles</th>
+                        <th>Riesgos</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>1. Desarrollar la plataforma del psicólogo</td>
+                        <td>Posible rechazo por parte de los especialistas por la curva de aprendizaje o la falta de tiempo para usarla.</td>
+                      </tr>
+                      <tr>
+                        <td>2. Desarrollo del Asistente Emocional Autónomo según la edad</td>
+                        <td>Riesgo de sesgo en la IA que lleve a respuestas inexactas o inadecuadas según la edad del usuario.</td>
+                      </tr>
+                      <tr>
+                        <td>3. Desarrollar la APP para los pacientes</td>
+                        <td>Baja tasa de adopción por parte de los usuarios debido a desconfianza o falta de interés.</td>
+                      </tr>
+                      <tr>
+                        <td>4. Sistema de recomendaciones y aprendizaje</td>
+                        <td>Riesgo de errores en las recomendaciones si los datos iniciales no son suficientes o no están bien estructurados.</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                
+                <h5>Análisis Financiero</h5>
+                <p>Para cada una opción del conjunto de opciones presentadas en la sección anterior presentar el análisis financiero para su desarrollo e implementación.</p>
+                
+                <div class="table-responsive mb-4">
+                  <table class="table table-bordered">
+                    <thead class="table-light">
+                      <tr>
+                        <th>Acciones posibles</th>
+                        <th>Análisis Financiero - NVP</th>
+                        <th>Otro</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Desarrollar la plataforma del psicólogo</td>
+                        <td>Alto</td>
+                        <td>Costos iniciales elevados por desarrollo y certificaciones, pero con alto potencial de retorno si se implementa en clínicas y hospitales.</td>
+                      </tr>
+                      <tr>
+                        <td>Desarrollo del Asistente Emocional Autónomo según la edad</td>
+                        <td>Alto</td>
+                        <td>Inversión alta en IA y entrenamiento, pero con posibilidad de monetización mediante suscripciones o venta a instituciones educativas.</td>
+                      </tr>
+                      <tr>
+                        <td>Desarrollar la APP para los pacientes</td>
+                        <td>Alto</td>
+                        <td>Requiere menor inversión inicial, pero su éxito depende de la cantidad de usuarios activos y la retención. Se puede monetizar con publicidad o suscripción</td>
+                      </tr>
+                      <tr>
+                        <td>Sistema de recomendaciones y aprendizaje</td>
+                        <td>Alto</td>
+                        <td>Costos elevados en infraestructura de IA y almacenamiento de datos, pero con retorno a largo plazo si se logra escalar y comercializar como servicio a terceros.</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                
+                <h5>Evaluación Financiera - Modelos Económicos para la Selección de Proyectos</h5>
+                
+                <!-- 4.2 Enfoque de Implementación: de la mejor opción -->
+                <h4 class="mt-4">4.2 Enfoque de Implementación: de la mejor opción</h4>
+                <h5>Hitos y Dependencias</h5>
+                <p>Para la mejor opción (opción a desarrollar e implementar) presentar el listado de hitos (entregables con propuesta de tiempo) a proporcionar al cliente durante el desarrollo del proyecto presentando además las dependencias entre estos.</p>
+                
+                <div class="table-responsive mb-4">
+                  <table class="table table-bordered">
+                    <thead class="table-light">
+                      <tr>
+                        <th>Hito</th>
+                        <th>Fecha de Entrega</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>H1. Reunión para presentación y entrega de Caso de Negocio al Cliente</td>
+                        <td>10 de marzo</td>
+                      </tr>
+                      <tr>
+                        <td>H2. Finalización del desarrollo de la IA o integración del asistente</td>
+                        <td>25 de marzo 2025</td>
+                      </tr>
+                      <tr>
+                        <td>H3. Pruebas de integración del software complementario para padres</td>
+                        <td>10 de abril 2025</td>
+                      </tr>
+                      <tr>
+                        <td>H4. Desarrollo de prototipo de robótica o domótica integrada</td>
+                        <td>30 de abril 2025</td>
+                      </tr>
+                      <tr>
+                        <td>H5. Pruebas de robótica o domótica en el prototipo</td>
+                        <td>15 de mayo 2025</td>
+                      </tr>
+                      <tr>
+                        <td>H6. Desarrollo de interfaz de usuario para el control del producto</td>
+                        <td>5 de junio 2025</td>
+                      </tr>
+                      <tr>
+                        <td>H7. Realización de pruebas de calidad del producto final</td>
+                        <td>12 de junio 2025</td>
+                      </tr>
+                      <tr>
+                        <td>H8. Presentación final y lanzamiento al mercado</td>
+                        <td>15 de junio 2025</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                
+                <h5>Roles y Responsabilidades</h5>
+                <p>Para la mejor opción (opción a desarrollar e implementar) presentar el listado de roles requeridos.</p>
+                
+                <div class="table-responsive">
+                  <table class="table table-bordered">
+                    <thead class="table-light">
+                      <tr>
+                        <th>Roles</th>
+                        <th>Responsabilidades</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>1. Desarrollador de IA</td>
+                        <td>Entrenar y optimizar los modelos de IA para el asistente emocional.</td>
+                      </tr>
+                      <tr>
+                        <td>2. Diseñador UX/UI</td>
+                        <td>Cree una interfaz amigable y accesible para los usuarios finales.</td>
+                      </tr>
+                      <tr>
+                        <td>3. Ingeniero de software</td>
+                        <td>Implementar la lógica del sistema y asegurar la integración de los módulos.</td>
+                      </tr>
+                      <tr>
+                        <td>4. Especialista en Psicología</td>
+                        <td>Validar la efectividad de las recomendaciones y actividades en la plataforma.</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 5. EVALUACIÓN -->
+          <div class="card mb-3">
+            <div class="card-header d-flex justify-content-between align-items-center" data-bs-toggle="collapse" data-bs-target="#evaluacionCollapse">
+              <h3 class="mb-0">5. EVALUACIÓN</h3>
+              <i class="bi bi-chevron-down"></i>
+            </div>
+            <div class="collapse" id="evaluacionCollapse">
+              <div class="card-body">
+                <p>En esta sección se describe cómo se medirán los beneficios que generará el proyecto. Esto debería incluir cualquier aspecto operativo en curso de la opción recomendada más allá de la implementación inicial.</p>
+                <p>El beneficio se medirá en términos del logro de los objetivos del proyecto planteados:</p>
+                
+                <div class="table-responsive">
+                  <table class="table table-bordered">
+                    <thead class="table-light">
+                      <tr>
+                        <th>Objetivo</th>
+                        <th>Meta</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Presentación del caso de negocio al cliente</td>
+                        <td>20 de enero 2025</td>
+                      </tr>
+                      <tr>
+                        <td>Finalización del desarrollo de la IA</td>
+                        <td>15 de marzo 2025</td>
+                      </tr>
+                      <tr>
+                        <td>Pruebas de integración del software complementario</td>
+                        <td>30 de marzo 2025</td>
+                      </tr>
+                      <tr>
+                        <td>Desarrollo de prototipo de robótica integrada</td>
+                        <td>15 de abril 2025</td>
+                      </tr>
+                      <tr>
+                        <td>Pruebas de hardware del prototipo</td>
+                        <td>30 de abril 2025</td>
+                      </tr>
+                      <tr>
+                        <td>Desarrollo de interfaz de usuario</td>
+                        <td>15 de mayo 2025</td>
+                      </tr>
+                      <tr>
+                        <td>Pruebas de calidad del producto final</td>
+                        <td>15 de junio 2025</td>
+                      </tr>
+                      <tr>
+                        <td>Presentación final y lanzamiento al mercado</td>
+                        <td>25 de junio 2025</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+                    
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
