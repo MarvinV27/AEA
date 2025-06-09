@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AEA - Contador</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <style>
+    body {
+      background-color: #f5f3e6;
+      padding-top: 100px;
+      text-align: center;
+    }
+    .navbar {
+      background-color: #ffd868;
+    }
+    .nav-link {
+      color: #000000;
+      transition: color 0.3s ease;
+    }
+    .nav-link:hover,
+    .nav-link.active {
+      color: #ff0101;
+    }
+    .navbar-brand {
+      color: #000000;
+      font-size: 25px;
+    }
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+    .countdown {
+      font-size: 2rem;
+      margin-top: 40px;
+      font-weight: bold;
+    }
+    .status-text {
+      font-size: 2.5rem;
+      margin-top: 20px;
+      color: #c0392b;
+      font-weight: bold;
+    }
+  </style>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const loggedIn = sessionStorage.getItem("loggedIn");
+      const userRole = sessionStorage.getItem("userRole");
+
+      if (!loggedIn || (userRole !== "armando" && userRole !== "team")) {
+        window.location.href = "/login.html";
+      }
+
+      const countdownElement = document.getElementById("countdown");
+      const targetDate = new Date();
+      const currentMonth = targetDate.getMonth(); // 0-indexed
+      const currentYear = targetDate.getFullYear();
+      const target = new Date(currentYear, currentMonth, 12, 7, 0, 0); // día 12 a las 7:00 AM
+
+      function updateCountdown() {
+        const now = new Date().getTime();
+        const distance = target.getTime() - now;
+
+        if (distance <= 0) {
+          countdownElement.innerHTML = "¡Subiendo...!";
+          return;
+        }
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        countdownElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+      }
+
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+    });
+  </script>
+</head>
+<body>
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container">
+        <a class="navbar-brand" href="#">AEA</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="../portafolio.html">Portafolio</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Contenido principal -->
+  <div class="container mt-5">
+    <div class="status-text">EN PROCESO</div>
+    <div class="countdown mt-4" id="countdown">Cargando...</div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
